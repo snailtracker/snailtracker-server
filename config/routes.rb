@@ -1,4 +1,6 @@
 SnailtrackerServer::Application.routes.draw do
+  resources :sessions
+
   resources :apps
 
   devise_for :users
