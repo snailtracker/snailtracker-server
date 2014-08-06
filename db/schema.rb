@@ -11,13 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140806025449) do
+ActiveRecord::Schema.define(version: 20140806030629) do
 
   create_table "action_types", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "actions", force: true do |t|
+    t.integer  "session_id"
+    t.string   "url"
+    t.integer  "action_type_id"
+    t.string   "selector"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "actions", ["action_type_id"], name: "index_actions_on_action_type_id"
+  add_index "actions", ["session_id"], name: "index_actions_on_session_id"
 
   create_table "apps", force: true do |t|
     t.string   "name"
