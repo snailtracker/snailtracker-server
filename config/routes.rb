@@ -1,4 +1,6 @@
 SnailtrackerServer::Application.routes.draw do
+  resources :notes
+
   resources :actions
 
   resources :action_types
