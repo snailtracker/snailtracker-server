@@ -1,4 +1,6 @@
 %h1 #{@app.name}
 = link_to "Delete App", app_path(@app), method: :delete
+.api-key
+  API Key: #{@app.api_key}
 .activity
   TODO: show app activity here

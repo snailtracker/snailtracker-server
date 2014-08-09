@@ -44,6 +44,7 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.2.1)
+    ffaker (1.24.0)
     formtastic (2.2.1)
       actionpack (>= 3.0)
     haml (4.0.5)
@@ -151,6 +152,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
+  ffaker
   formtastic
   haml-rails
   jbuilder (~> 1.2)
