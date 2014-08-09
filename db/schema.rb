@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140806031008) do
+ActiveRecord::Schema.define(version: 20140809021303) do
 
   create_table "action_types", force: true do |t|
     t.string   "name"
@@ -38,6 +38,12 @@ ActiveRecord::Schema.define(version: 20140806031008) do
     t.datetime "updated_at"
   end
 
+  create_table "log_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "notes", force: true do |t|
     t.integer  "session_id"
     t.text     "content"
@@ -46,12 +52,6 @@ ActiveRecord::Schema.define(version: 20140806031008) do
   end
 
   add_index "notes", ["session_id"], name: "index_notes_on_session_id"
-
-  create_table "notification_types", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "sessions", force: true do |t|
     t.integer  "app_id"
