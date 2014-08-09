@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809021303) do
+ActiveRecord::Schema.define(version: 20140809022404) do
 
   create_table "action_types", force: true do |t|
     t.string   "name"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 20140809021303) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "logs", force: true do |t|
+    t.integer  "log_type_id"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "logs", ["log_type_id"], name: "index_logs_on_log_type_id"
 
   create_table "notes", force: true do |t|
     t.integer  "session_id"
