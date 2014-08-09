@@ -8,8 +8,6 @@ gem 'sqlite3'
 
 gem 'devise'
 
-gem 'rspec-rails'
-
 gem 'seedbank'
 
 # Use SCSS for stylesheets
@@ -36,6 +34,10 @@ gem 'jbuilder', '~> 1.2'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :test do
+  gem 'rspec-rails', '~> 3.0'
 end
 
 # Use ActiveModel has_secure_password
