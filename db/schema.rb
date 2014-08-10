@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809022404) do
+ActiveRecord::Schema.define(version: 20140810190322) do
 
   create_table "action_types", force: true do |t|
     t.string   "name"
@@ -26,9 +26,11 @@ ActiveRecord::Schema.define(version: 20140809022404) do
     t.string   "selector"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "app_id"
   end
 
   add_index "actions", ["action_type_id"], name: "index_actions_on_action_type_id"
+  add_index "actions", ["app_id"], name: "index_actions_on_app_id"
   add_index "actions", ["session_id"], name: "index_actions_on_session_id"
 
   create_table "apps", force: true do |t|
@@ -49,8 +51,10 @@ ActiveRecord::Schema.define(version: 20140809022404) do
     t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "app_id"
   end
 
+  add_index "logs", ["app_id"], name: "index_logs_on_app_id"
   add_index "logs", ["log_type_id"], name: "index_logs_on_log_type_id"
 
   create_table "notes", force: true do |t|
@@ -58,8 +62,10 @@ ActiveRecord::Schema.define(version: 20140809022404) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "app_id"
   end
 
+  add_index "notes", ["app_id"], name: "index_notes_on_app_id"
   add_index "notes", ["session_id"], name: "index_notes_on_session_id"
 
   create_table "sessions", force: true do |t|
