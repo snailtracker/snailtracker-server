@@ -15,7 +15,7 @@ Setup
 ----
 How does it work?  You simply need to:
 
-1.  Setup the rails server on one of your servers (so you can access it publicly
+1.  Setup the rails server on one of your servers (so you can access it publicly)
 
 2.  Create an "app" for each app you would like to track
 
