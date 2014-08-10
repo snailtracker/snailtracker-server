@@ -7,11 +7,16 @@ module Api
     protect_from_forgery :except => :create
   end
 
+  def render_api_create_response(resource)
+    render_api_response resource, ! resource.new_record?
+  end
+
   def render_api_response(resource, success)
+    resource_key = resource.class.to_s.underscore
     if success
-      return render json: {success: true, errors: []}
+      return render json: {success: true, :"#{resource_key}" => resource.attributes, errors: []}
     else
-      return render json: {success: false, errors: resource.errors, error_message: resource.errors.full_messages.to_sentence}
+      return render json: {success: false, :"#{resource_key}" => resource.attributes, errors: resource.errors, error_message: resource.errors.full_messages.to_sentence}
     end
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140810190322) do
+ActiveRecord::Schema.define(version: 20140810203331) do
 
   create_table "action_types", force: true do |t|
     t.string   "name"
@@ -26,11 +26,9 @@ ActiveRecord::Schema.define(version: 20140810190322) do
     t.string   "selector"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "app_id"
   end
 
   add_index "actions", ["action_type_id"], name: "index_actions_on_action_type_id"
-  add_index "actions", ["app_id"], name: "index_actions_on_app_id"
   add_index "actions", ["session_id"], name: "index_actions_on_session_id"
 
   create_table "apps", force: true do |t|
@@ -52,10 +50,12 @@ ActiveRecord::Schema.define(version: 20140810190322) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "app_id"
+    t.integer  "session_id"
   end
 
   add_index "logs", ["app_id"], name: "index_logs_on_app_id"
   add_index "logs", ["log_type_id"], name: "index_logs_on_log_type_id"
+  add_index "logs", ["session_id"], name: "index_logs_on_session_id"
 
   create_table "notes", force: true do |t|
     t.integer  "session_id"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20140810190322) do
     t.string   "browser"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "api_key"
   end
 
   add_index "sessions", ["app_id"], name: "index_sessions_on_app_id"
