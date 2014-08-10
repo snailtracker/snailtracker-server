@@ -4,6 +4,7 @@ module Api
 
   included do
     before_filter :authenticate_api_key
+    before_filter :set_session
     protect_from_forgery :except => :create
   end
 
@@ -18,6 +19,10 @@ module Api
     else
       return render json: {success: false, :"#{resource_key}" => resource.attributes, errors: resource.errors, error_message: resource.errors.full_messages.to_sentence}
     end
+  end
+
+  def set_session
+    @session = Session.find_by_api_key(params[:session_api_key])
   end
 
   def authenticate_api_key

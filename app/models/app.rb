@@ -5,5 +5,6 @@ class App < ActiveRecord::Base
   has_many :logs
   has_many :actions
   has_many :notes
+  has_many :sessions
 
 end

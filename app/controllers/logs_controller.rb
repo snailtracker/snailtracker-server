@@ -4,7 +4,7 @@ class LogsController < ApplicationController
   def create
     log = Log.new(log_params)
     log.log_type = LogType.find_by_name(params[:log][:log_type_name])
-    log.app = @app
+    log.session = @session
     log.save
     render_api_create_response log
   end

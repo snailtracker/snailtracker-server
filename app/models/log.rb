@@ -5,4 +5,6 @@ class Log < ActiveRecord::Base
   validates :log_type, presence: true
   validates :message, presence: true
   validates :session, presence: true
+
+  has_one :app, through: :session
 end
