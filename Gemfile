@@ -48,6 +48,10 @@ group :test, :development do
   gem 'ffaker'
 end
 
+group :development do
+  gem 'httparty'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
