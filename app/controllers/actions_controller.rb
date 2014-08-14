@@ -4,7 +4,8 @@ class ActionsController < ApplicationController
   def create
     action = Action.new(action_params)
     action.session = @session
-    action.action_type = ActionType.find_by_name(params[:action][:action_type_name])
+    action.action_type = ActionType.find_by_name(params[:app_action][:action_type_name])
+    action.session = Session.find_by_api_key(params[:app_action][:session_api_key])
     action.save
     render_api_create_response action
   end
@@ -12,6 +13,6 @@ class ActionsController < ApplicationController
   private
 
   def action_params
-    params.require(:action).permit(:url, :selector)
+    params.require(:app_action).permit(:url, :selector, :target_text, :keycode, :char)
   end
 end
