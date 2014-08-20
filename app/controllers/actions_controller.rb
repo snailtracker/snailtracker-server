@@ -13,6 +13,6 @@ class ActionsController < ApplicationController
   private
 
   def action_params
-    params.require(:app_action).permit(:url, :selector, :target_text, :keycode, :char)
+    params.require(:app_action).permit(:url, :selector, :target_text, :keycode, :char, :target_value)
   end
 end

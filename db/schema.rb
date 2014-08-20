@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140814025244) do
+ActiveRecord::Schema.define(version: 20140820013816) do
 
   create_table "action_types", force: true do |t|
     t.string   "name"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20140814025244) do
     t.string   "target_text"
     t.integer  "keycode"
     t.string   "char"
+    t.string   "value"
+    t.string   "target_value"
   end
 
   add_index "actions", ["action_type_id"], name: "index_actions_on_action_type_id"
