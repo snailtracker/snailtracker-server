@@ -10,6 +10,7 @@ SnailtrackerServer::Application.routes.draw do
 
   # Web Resources
   resources :apps
+  resources :sessions
 
   root to: 'welcome#index'
 

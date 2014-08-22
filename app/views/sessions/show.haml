@@ -1,0 +1,7 @@
+%h1 Session
+%h2 #{@session.app.name}
+%h2 #{@session.description}
+.actions
+  - @session.actions.each do |action|
+    .action
+      = action.description

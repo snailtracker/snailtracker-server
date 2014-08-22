@@ -5,5 +5,5 @@
 .sessions
   - @app.sessions.order("updated_at desc").each do |session|
     .session
-      = session.description
+      = link_to session.description, session_path(session)
 
