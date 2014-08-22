@@ -9,7 +9,11 @@ SnailtrackerServer::Application.routes.draw do
   # Web Resources
   resources :apps
 
-  devise_for :users
+  root to: 'welcome#index'
 
-  root to: "welcome#index"
+  devise_for :users
+  devise_scope :user do
+    post '/sessions/user', to: 'devise/sessions#create'
+  end
+
 end
