@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
   include Api
   def create
     session = Session.new(session_params)

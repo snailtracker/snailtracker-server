@@ -1,4 +1,4 @@
-class ActionsController < ApplicationController
+class Api::ActionsController < ApplicationController
   include Api
 
   def create

@@ -1,10 +1,12 @@
 SnailtrackerServer::Application.routes.draw do
   # API Resources
-  resources :logs
-  resources :notes
-  resources :actions
-  resources :action_types
-  resources :sessions
+  namespace :api do
+    resources :logs
+    resources :notes
+    resources :actions
+    resources :action_types
+    resources :sessions
+  end
 
   # Web Resources
   resources :apps

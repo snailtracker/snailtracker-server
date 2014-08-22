@@ -1,4 +1,4 @@
-class LogsController < ApplicationController
+class Api::LogsController < ApplicationController
   include Api
 
   def create
