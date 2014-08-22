@@ -2,5 +2,8 @@
 = link_to "Delete App", app_path(@app), method: :delete
 .api-key
   API Key: #{@app.api_key}
-.activity
-  TODO: show app activity here
+.sessions
+  - @app.sessions.order("updated_at desc").each do |session|
+    .session
+      = session.description
+
