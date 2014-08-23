@@ -40,11 +40,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :test do
-  gem 'rspec-rails', '~> 3.0'
-end
-
 group :test, :development do
+  gem 'rspec-rails', '~> 3.0'
   gem 'ffaker'
 end
 
