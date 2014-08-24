@@ -6,6 +6,7 @@ SnailtrackerServer::Application.routes.draw do
     resources :actions
     resources :action_types
     resources :sessions
+    resources :errors
   end
 
   # Web Resources
