@@ -21,10 +21,9 @@ How does it work?  You simply need to:
 
 3.  Install the [client JS library](https://github.com/snailtracker/snailtracker-js) on each web application you would like to track, and provide the app's API Key.
 
-4.  Install the server library (for [rails](https://github.com/snailtracker/snailtracker-rails) or [PHP](https://github.com/snailtracker/snailtracker-php) ) on your server, and set your app's API Key.
+4.  Install the [rails](https://github.com/snailtracker/snailtracker-rails) gem on your server, and follow the setup instructions.
 
-5.  Start tracking down those difficult bugs!
-
+5.  Start tracking down difficult bugs!
 
 
 License
