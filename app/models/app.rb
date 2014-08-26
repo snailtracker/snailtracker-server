@@ -6,5 +6,5 @@ class App < ActiveRecord::Base
   has_many :actions
   has_many :notes
   has_many :sessions
-
+  has_many :errors, through: :sessions
 end

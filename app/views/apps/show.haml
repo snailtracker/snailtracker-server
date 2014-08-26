@@ -1,9 +1,10 @@
-%h1 #{@app.name}
-= link_to "Delete App", app_path(@app), method: :delete
-.api-key
+%h2 #{@app.name}
+.api-key.well
   API Key: #{@app.api_key}
-.sessions
-  - @app.sessions.order("updated_at desc").each do |session|
-    .session
-      = link_to session.description, session_path(session)
+%h3
+  Recent Errors
+.errors
+  - @app.errors.recent_first.each do |error|
+    .error
+      = link_to error.message, session_path(error.session)
 

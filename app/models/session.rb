@@ -3,6 +3,7 @@ class Session < ActiveRecord::Base
   include ActionView::Helpers::DateHelper
   belongs_to :app
   has_many :actions
+  has_many :errors
 
   def description
     "User ID: #{user_id || "unknown"} Name: #{user_name || "unknown"} Duration: #{duration}"

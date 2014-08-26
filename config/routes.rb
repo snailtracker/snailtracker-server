@@ -13,7 +13,13 @@ SnailtrackerServer::Application.routes.draw do
   resources :apps
   resources :sessions
 
-  root to: 'welcome#index'
+  unauthenticated :user do
+    root to: 'welcome#index', as: 'root'
+  end
+
+  authenticated :user do
+    root :to => "apps#index", as: 'authenticated_root'
+  end
 
   devise_for :users
   devise_scope :user do

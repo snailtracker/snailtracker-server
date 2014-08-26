@@ -1,4 +1,8 @@
-= link_to "New App", new_app_path
+.row.actions
+  .col-sm-4
+    %h2 Applications
+  .col-sm-2
+    = link_to "New Application", new_app_path, class: "btn btn-success"
 .apps
   - @apps.each do |app|
     = link_to "#{app.name}", app_path(app)
