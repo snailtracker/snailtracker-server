@@ -1,6 +1,7 @@
 class Action < ActiveRecord::Base
   belongs_to :session
   belongs_to :action_type
+  validates :session, presence: true
 
   has_one :app, through: :session
 
