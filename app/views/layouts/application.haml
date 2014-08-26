@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title SnailTracker
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    %p.error= flash[:error]
+    %p.success= flash[:success]
+    %p.notice= notice
+    %p.alert= alert
+    .row
+      .col-sm-8.col-sm-offset-2
+        = yield
+      .col-sm-2

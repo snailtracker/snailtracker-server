@@ -1,3 +1,8 @@
 %h1 Snailtracker
-- unless current_user
-  = link_to "Login", new_user_session_path
+- if User.count < 1
+  It looks like you don't have any users setup.
+  = link_to "Register a user", new_user_registration_path
+  to get started!
+- else
+  - unless current_user
+    = link_to "Login", new_user_session_path
