@@ -4,7 +4,7 @@
 %h3
   Recent Errors
 .errors
-  - @app.errors.recent_first.each do |error|
+  - @app.user_errors.recent_first.each do |error|
     .error
       = link_to error.message, session_path(error.session)
 

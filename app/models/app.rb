@@ -6,5 +6,5 @@ class App < ActiveRecord::Base
   has_many :actions
   has_many :notes
   has_many :sessions
-  has_many :errors, through: :sessions
+  has_many :user_errors, through: :sessions, class_name: "Error", foreign_key: :error_id
 end

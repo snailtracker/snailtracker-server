@@ -3,10 +3,10 @@ class Session < ActiveRecord::Base
   include ActionView::Helpers::DateHelper
   belongs_to :app
   has_many :actions
-  has_many :errors
+  has_many :user_errors, class_name: "Error"
 
   def actions_and_errors
-    (actions + errors).sort do |a, b|
+    (actions + user_errors).sort do |a, b|
       a.updated_at <=> b.updated_at
     end
   end
