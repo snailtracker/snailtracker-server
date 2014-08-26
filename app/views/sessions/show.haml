@@ -1,5 +1,5 @@
 %h2 Session (#{@session.app.name})
-.actions
-  - @session.actions.each do |action|
-    .action
-      = action.description
+.session-items
+  - @session.actions_and_errors.each do |item|
+    .item{class: session_item_class(item)}
+      = item.description

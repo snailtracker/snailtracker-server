@@ -5,6 +5,12 @@ class Session < ActiveRecord::Base
   has_many :actions
   has_many :errors
 
+  def actions_and_errors
+    (actions + errors).sort do |a, b|
+      a.updated_at <=> b.updated_at
+    end
+  end
+
   def description
     "User ID: #{user_id || "unknown"} Name: #{user_name || "unknown"} Duration: #{duration}"
   end
